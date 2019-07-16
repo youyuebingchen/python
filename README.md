@@ -1,5 +1,3 @@
-# python
-python_study
 ## decorators
 ### 在函数中定义函数
 在函数中a定义函数b,b函数不可以在a函数外被调用。
