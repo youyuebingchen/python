@@ -15,7 +15,7 @@ python_study
   我们用@a_decorator来简写a_func_requiring_decoration = a_decorator(a_func_requiring_decorator)
   也就是我们将需要装饰的函数作为参数放进装饰器里，被装饰器所装饰。但是这样会改变a_func_requiring_decoration() 函数的名字和注释文档(docstring)
   我们用function.wraps来修改该内容。
-  @wraps接受一个函数来进行装饰，并加入了复制函数名称、注释文档、参数列表等等的功能。这可以让我们在装饰器里面访问在装饰之前的函数的属性。
+  <br>@wraps接受一个函数来进行装饰，并加入了复制函数名称、注释文档、参数列表等等的功能。这可以让我们在装饰器里面访问在装饰之前的函数的属性。
   
   蓝本规范
   
