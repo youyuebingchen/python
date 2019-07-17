@@ -26,3 +26,9 @@
 4.字符串前加 f
 - 以f开头表示在字符串内支持大括号内的python 表达式
 
+### 两个变量同时迭代
+  li1 = [1,2]
+  li2 = [3,4]
+  mix =list(zip(li1,l2))
+  for i,j in mix:
+    print(i,j,end="\n")
