@@ -28,8 +28,8 @@
 
 ### 两个变量同时迭代
 
-  li1 = [1,2]
-  li2 = [3,4]
-  mix =list(zip(li1,l2))
-  for i,j in mix:
-    print(i,j,end="\n")
+    li1 = [1,2]
+    li2 = [3,4]
+    mix =list(zip(li1,l2))
+    for i,j in mix:
+      print(i,j,end="\n")
