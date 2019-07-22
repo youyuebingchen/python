@@ -45,5 +45,7 @@
 ### 装饰器的原则
 - 不能修改被装饰的函数的源代码
 - 不能修改被装饰的函数的调用方式
+### 含参数装饰器
+- 
 
 参考<https://www.runoob.com/w3cnote/python-func-decorators.html>
