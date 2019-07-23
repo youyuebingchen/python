@@ -5,7 +5,7 @@
 ##### Conda是一个包管理器，包管理器是自动化软件安装，更新，卸载的一种工具。其核心功能是包管理与环境管理。Miniconda是最小的conda安装环境， 一个干净的conda环境。conda和Anaconda没有必然关系，Anaconda才是一个python发行版。
 
 ##### pip可以允许你在任何环境中安装python包，而conda允许你在conda环境中安装任何语言包。
-###一、包管理命令
+### 一、包管理命令
 - 安装 conda
 - 查看 conda 帮助
 	- conda -h /--help
@@ -26,7 +26,7 @@
 	- conda remove scrapy
 	- conda uninstall
 
-###二、环境管理命令
+### 二、环境管理命令
 - 创建虚拟环境，可以在创建环境的同时安装包。由于 conda 将 python 也作为包，所以可以像其他包一样安装。
 	- conda create --name tf python=3.5.2 tensorflow
 - 查看环境
