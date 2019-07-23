@@ -46,6 +46,7 @@
 	- conda remove --name myenv redis
 
 conda 会在每个用户家目录下创建 .conda 目录，用于管理创建的环境，而配置文件存放于 .condarc（没有可以新建）。
+
 参考：
 <br>1.<https://blog.csdn.net/chenfeidi1/article/details/80873993#_conda_3>
 ---
