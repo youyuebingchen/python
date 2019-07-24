@@ -48,6 +48,7 @@
 ### 含参数装饰器
 相比于普通装饰器，含参数装饰器又多了一层，可通过参数控制装饰器的效果。
 - 将decorator返回
+
     from functools import wraps
     def logit(logfile='out.log'):
         def logging_decorator(func):
