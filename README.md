@@ -49,27 +49,28 @@
 相比于普通装饰器，含参数装饰器又多了一层，可通过参数控制装饰器的效果。
 - 将decorator返回
 
-    from functools import wraps
-    def logit(logfile='out.log'):
-        def logging_decorator(func):
-            @wraps(func)
-            def wrapped_function(*args, **kwargs):
-                log_string = func.__name__ + " was called"
-                print(log_string)
-                # 打开logfile，并写入内容
-                with open(logfile, 'a') as opened_file:
-                    # 现在将日志打到指定的logfile
-                    opened_file.write(log_string + '\n')
-                return func(*args, **kwargs)
-            return wrapped_function
-        return logging_decorator
 
-    @logit()
-    def myfunc1():
-        pass
-    # 通过logfile参数来控制其输出文件名。
-    @logit(logfile='func2.log')
-    def myfunc2():
-        pass
+        from functools import wraps
+        def logit(logfile='out.log'):
+            def logging_decorator(func):
+                @wraps(func)
+                def wrapped_function(*args, **kwargs):
+                    log_string = func.__name__ + " was called"
+                    print(log_string)
+                    # 打开logfile，并写入内容
+                    with open(logfile, 'a') as opened_file:
+                        # 现在将日志打到指定的logfile
+                        opened_file.write(log_string + '\n')
+                    return func(*args, **kwargs)
+                return wrapped_function
+            return logging_decorator
+
+        @logit()
+        def myfunc1():
+            pass
+        # 通过logfile参数来控制其输出文件名。
+        @logit(logfile='func2.log')
+        def myfunc2():
+            pass
 
 参考<https://www.runoob.com/w3cnote/python-func-decorators.html>
