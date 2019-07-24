@@ -72,5 +72,37 @@
         @logit(logfile='func2.log')
         def myfunc2():
             pass
+ 
+ - 数据检查，通过参数mustbe_cols，missing_rate，dtype控制装饰器检查哪些量。
+ 
+        def check_output(mustbe_cols=[], missing_rate={}, dtype={}):
+        def decorator(func, ):
+            " logging decorator"
+            @wraps(func)
+            def wrapper(*args, **kwargs):
+                " wrapper "
+                try:
+                    return_val = func(*args, **kwargs)
+                    assert isinstance(return_val, pd.DataFrame)
+                    if mustbe_cols:
+                        try:
+                            assert set(mustbe_cols).issubset(set(return_val.columns))
+                        except Exception as exp:
+                            need = set(mustbe_cols) - set(return_val.columns)
+                            raise Exception(f"{func.__name__}'s' output need: {need}")
+                    if missing_rate:
+                        missing_dict = (return_val[return_val.keys()].isna().sum() / len(return_val)).to_dict()
+                        for key in missing_rate:
+                            assert missing_rate[key] > missing_dict[key]
+                    if dtype:
+                        dtype_dict = return_val.dtypes.to_dict()
+                        for key in dtype:
+                            assert dtype[key] == dtype_dict[key]
+                except Exception as exp:
+                    logger.exception(exp)
+                    raise exp
+                return return_val
+            return wrapper
+        return decorator
 
 参考<https://www.runoob.com/w3cnote/python-func-decorators.html>
