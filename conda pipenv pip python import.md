@@ -1,5 +1,11 @@
 # conda + pipenv + pip + python "import " 
 ----
+
+为什么要引入虚拟环境：甚至要达到每个工程使用一个独立的虚拟环境。
+
+- 每个工程使用的lib的版本号甚至pyhon都不一样
+- 甚至对于同一个项目，随着项目的进行甚至要讲项目从python2迁移到python3
+
 ## conda
 
 ##### Conda是一个包管理器，包管理器是自动化软件安装，更新，卸载的一种工具。其核心功能是包管理与环境管理。Miniconda是最小的conda安装环境， 一个干净的conda环境。conda和Anaconda没有必然关系，Anaconda才是一个python发行版。
