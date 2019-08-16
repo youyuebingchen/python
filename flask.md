@@ -4,11 +4,24 @@
 
 看官方文档库
 
+
+### 框架模式
 <br>学习一个框架就是学习模块的功能以及怎么使用。
 <br>MVC框架产生理念：分工。核心思想：解耦
 <br>M: model 模型，和数据库进行交互
 <br>V: View 视图，产生html页面
 <br>C: Controller,控制器，接收请求，进行处理与M和V进行交互返回应答
+
+- MVC
+        - M:Models:模型层,主要负责数据库建模
+        - V:Views,视图处理用户的显示内容
+        - C:Controller,控制器,用于与用户交互的部分内容(请求和响应)
+
+- MTV
+	- M:Models:模型层,主要负责数据库建模
+        - T:Templates:模板,用来处理用户的显示内容 如:html
+        - V:Views,视图,处理与用户打交道的内容(请求和响应)
+	
 
 Django 是用python语言写的开源web开发框架，并遵循MVC设计。
 <br> 原则：快速开发；DRY don't repeat yourself
